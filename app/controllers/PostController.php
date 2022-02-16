@@ -10,7 +10,7 @@ require_once(dirname(__FILE__) . '../../models/Post.php');
 use app\models\Post;
 use PDO;
 
-class PostController
+class PostController extends BaseController
 {
     function __construct()
     {
@@ -41,7 +41,8 @@ class PostController
                     'body' => html_entity_decode($body),
                     'author' => $author,
                     'category_id' => $category_id,
-                    'category_name' => $category_name
+                    'category_name' => $category_name,
+                    'image' => $image
                 );
 
                 array_push($posts_arr, $post_item);
@@ -72,6 +73,7 @@ class PostController
         $post->body = $data->body;
         $post->author = $data->author;
         $post->category_id = $data->category_id;
+        $post->image = $data->image;
 
         if ($post->create()) {
             echo json_encode(
@@ -97,7 +99,7 @@ class PostController
         $post->id = $getId[2];
         // $post->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-        
+
 
         $post->read_single();
 
@@ -107,11 +109,71 @@ class PostController
             'body' => $post->body,
             'author' => $post->author,
             'category_id' => $post->category_id,
-            'category_name' => $post->category_name
+            'category_name' => $post->category_name,
+            'image' => $post->image
         );
 
         print_r(json_encode($post_arr));
     }
+
+    function getPostById()
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+
+        $database = new Database();
+        $db = $database->connect();
+        $post = new Post($db);
+        $url = $_SERVER['REQUEST_URI'];
+        $getId = explode('/', $url);
+        $post->category_id = $getId[4];
+
+
+
+        // $post->get_post_by_category();
+        // $post_arr = array(
+        //     'id' => $post->id,
+        //     'title' => $post->title,
+        //     'body' => $post->body,
+        //     'author' => $post->author,
+        //     'category_id' => $post->category_id,
+        //     'category_name' => $post->category_name,
+        //     'image' => $post->image
+        // );
+
+        // print_r(json_encode($post_arr));
+
+        $result = $post->get_post_by_category();
+        $num = $result->rowCount();
+
+        if ($num > 0) {
+            $posts_arr = array();
+
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                extract($row);
+
+                $post_item = array(
+                    'id' => $id,
+                    'title' => $title,
+                    'body' => html_entity_decode($body),
+                    'author' => $author,
+                    'category_id' => $category_id,
+                    'category_name' => $category_name,
+                    'image' => $image
+                );
+
+                array_push($posts_arr, $post_item);
+            }
+
+            echo json_encode($posts_arr);
+        } else {
+            echo json_encode(
+                array('message' => 'No Posts Found')
+            );
+        }
+    }
+
+
     public function delete()
     {
         header('Access-Control-Allow-Origin: *');
@@ -159,6 +221,7 @@ class PostController
         $post->body = $data->body;
         $post->author = $data->author;
         $post->category_id = $data->category_id;
+        $post->image = $data->image;
         if ($post->update()) {
             echo json_encode(
                 array('message' => 'Post Updated')

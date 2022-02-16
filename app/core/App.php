@@ -22,11 +22,16 @@ Router::get('/admin/post/{id}', 'HomeController@update');
 Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
 Router::get('/admin/categorydashboard', 'HomeController@CatDashborad');
 
+// template
+Router::get('/detail/{id}', 'HomeController@detail');
+
 
 
 // Post
 
 Router::get('/api/post', 'PostController@index');
+
+// api call details
 Router::get('/post/{id}', 'PostController@readSingle');
 
 // Admin Post
@@ -34,6 +39,7 @@ Router::get('/post/{id}', 'PostController@readSingle');
 Router::post('/api/admin/post', 'PostController@create');
 Router::put('/api/admin/post/{id}', 'PostController@update');
 Router::delete('/api/admin/post/{id}', 'PostController@delete');
+Router::get('/api/post/category/{id}', 'PostController@getPostById');
 
 // Category
 

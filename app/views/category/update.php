@@ -23,7 +23,7 @@ namespace app\views\category;
         <h1><em class="fa fa-pen-square"></em>Update</h1>
         <div>
             <label for="name">category</label>
-            <input type="text" class="form-control" name="title">
+            <input type="text" class="form-control" name="name">
         </div>
         <div>
             <button id="btnUpdate" class="btn btn-primary">update</button>

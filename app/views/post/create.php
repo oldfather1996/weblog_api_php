@@ -16,6 +16,7 @@ namespace app\views\post;
 </head>
 
 <body>
+
     <body>
         <div class="container-fluid">
             <h1><em class="fa fa-pen-square"></em>Create</h1>

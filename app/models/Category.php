@@ -37,6 +37,8 @@ class Category
     return $stmt;
   }
 
+ 
+
   public function read_single()
   {
     $query = 'SELECT
