@@ -1,0 +1,10 @@
+.demo {
+  width: 1920px;
+  height: 100px;
+  margin: auto 0;
+  background-color: black;
+}
+.demo>p{
+  color: white;
+}
+

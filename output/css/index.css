@@ -1,0 +1,49 @@
+/* dashboard */
+
+h1 {
+    text-align: center;
+}
+
+.container_fluid__inside {
+    display: flex;
+}
+
+.left {
+    background-color: #333;
+    width: 12%;
+    min-height: 960px;
+}
+
+.left__dashboard {
+    border-bottom: 1px rgba(68, 68, 68, 1) double;
+}
+
+.left__dashboard-text {
+    color: red;
+    text-align: center;
+    margin: 5px auto 10px;
+}
+
+.left>ul>li {
+    list-style-type: none;
+    margin: 40px 0;
+    align-items: left;
+}
+
+.left__post {
+    color: #fff;
+}
+
+.left__category {
+    color: #fff;
+}
+
+.right {
+    width: 88%;
+}
+
+.list__course--body {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
