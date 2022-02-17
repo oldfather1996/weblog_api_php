@@ -68,7 +68,6 @@ class Router
     //Match current URL router table and set current route
     private function matching()
     {
-
         //parse_url: split url & querystring to array
         $url = parse_url($_SERVER['REQUEST_URI']);
         $method = $_SERVER['REQUEST_METHOD'];

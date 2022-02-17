@@ -18,8 +18,14 @@ $.ajax({
             $('#data-title').text(reponse['title']),
             $('#data-body').text(reponse['body']),
             $('#data-category_name').text(reponse['category_name'])
+
     },
     error: function() {
         window.location.href = "/"
     }
 })
+
+
+var url_category = window.location.href;
+const getcategory_id = url_category.split('/');
+var category_id = getcategory_id[5];

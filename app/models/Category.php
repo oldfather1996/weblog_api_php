@@ -44,7 +44,7 @@ class Category
     $query = 'SELECT
           id,
           name
-        FROM
+        FROM  
           ' . $this->table . '
       WHERE id = ?
       LIMIT 0,1';

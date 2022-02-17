@@ -40,42 +40,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"> Tin Tức</a>
+                <a class="navbar-brand" href="/"> Tin Tức</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Giới thiệu</a>
+                        <!-- <a href="#">Giới thiệu</a> -->
                     </li>
                     <li>
-                        <a href="#">Liên hệ</a>
+                        <!-- <a href="#">Liên hệ</a> -->
                     </li>
                 </ul>
 
-                <form class="navbar-form navbar-left" role="search">
+                <!-- <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                </form> -->
 
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="#">Đăng ký</a>
+                        <!-- <a href="#">Đăng ký</a> -->
                     </li>
                     <li>
-                        <a href="#">Đăng nhập</a>
+                        <!-- <a href="#">Đăng nhập</a> -->
                     </li>
                     <li>
                         <a>
-                            <span class="glyphicon glyphicon-user"></span>
-                            Hương Hương
+                            <!-- <span class="glyphicon glyphicon-user"></span>
+                            Hương Hương -->
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">Đăng xuất</a>
+                        <!-- <a href="#">Đăng xuất</a> -->
                     </li>
 
                 </ul>
@@ -98,7 +98,10 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
+                
                 <h1 id="data-author"></h1>
+
+                
 
                 <!-- Author -->
                 <p class="lead">
@@ -122,45 +125,6 @@
                 <!-- Blog Comments -->
 
                 <!-- Comments Form -->
-                <div class="well">
-                    <h4>Viết bình luận ...<span class="glyphicon glyphicon-pencil"></span></h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Gửi</button>
-                    </form>
-                </div>
-
-                <hr>
-
-                <!-- Posted Comments -->
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
 
             </div>
 
@@ -171,7 +135,18 @@
                     <div class="panel-heading"><b>Tin liên quan</b></div>
                     <div class="panel-body">
 
-                        <!-- item -->
+                        <div class="row" id="tintuc-lienquan" style="margin-top: 10px;">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <a href="#"><b>Project Five</b></a>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="break"></div>
+                        </div>
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -184,9 +159,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -199,9 +171,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -214,22 +183,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <!-- end item -->
                     </div>
                 </div>
 
@@ -237,7 +190,6 @@
                     <div class="panel-heading"><b>Tin nổi bật</b></div>
                     <div class="panel-body">
 
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -250,9 +202,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -265,9 +214,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -280,9 +226,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
-
-                        <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
                                 <a href="detail.html">
@@ -295,7 +238,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="break"></div>
                         </div>
-                        <!-- end item -->
                     </div>
                 </div>
 
@@ -304,6 +246,10 @@
         </div>
         <!-- /.row -->
     </div>
+    <p id="data-category_id"></p>
+    <select name="" id="">
+        <option value="data-category_id" id="demo"></option>
+    </select>
     <!-- end Page Content -->
 
     <!-- Footer -->
@@ -325,3 +271,5 @@
 </body>
 
 </html>
+<?php
+?>

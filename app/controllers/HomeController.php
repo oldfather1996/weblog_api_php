@@ -20,6 +20,10 @@ class HomeController extends BaseController
     {
         return $this->view('client.detail');
     }
+    public function postbyid()
+    {
+        return $this->view('client.categorydetail');
+    }
     public function Dashbroad()
     {
         return $this->view('dashbroad.index');

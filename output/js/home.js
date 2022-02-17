@@ -37,14 +37,14 @@ function renderCourses(courses) {
         </h3>
         <div class="col-md-12 border-right">
             <div class="col-md-3">
-                <a href="chitiet.html">
+                <a href="/detail/${course.id}">
                 <img class="img-responsive" src="${course.image}" alt="">
                 </a>
             </div>
             <div class="col-md-9">
                 <h3>${course.title}</h3>
-                <p>${course.body}</p>
-                <a class="btn btn-primary" href="detail/${course.id}">Details <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p class="demo-here">${course.body}</p>
+                <a class="btn btn-primary" href="detail/${course.id}">Read more... <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <div class="break"></div>
         </div>
@@ -59,7 +59,7 @@ function renderCatCourses(catCourses) {
     var htmls = catCourses.data.map(function(catCourses) {
         return `
         <li href="#" class="list-group-item menu1">
-        <a href="#">${catCourses.name}</a>
+        <a href="/post/category/${catCourses.id}">${catCourses.name}</a>
         </li>
         `
     })

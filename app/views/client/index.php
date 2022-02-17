@@ -40,42 +40,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Tin Tức</a>
+                <a class="navbar-brand" href="/">Tin Tức</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
+                    <!-- <li>
                         <a href="gioithieu.html">Giới thiệu</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="lienhe.html">Liên hệ</a>
-                    </li>
+                    </li> -->
                 </ul>
 
-                <form class="navbar-form navbar-left" role="search">
+                <!-- <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                </form> -->
 
                 <ul class="nav navbar-nav pull-right">
                     <li>
-                        <a href="dangki.html">Đăng ký</a>
+                        <!-- <a href="dangki.html">Đăng ký</a> -->
                     </li>
                     <li>
-                        <a href="dangnhap.html">Đăng nhập</a>
+                        <!-- <a href="dangnhap.html">Đăng nhập</a> -->
                     </li>
                     <li>
                         <a>
-                            <span class="glyphicon glyphicon-user"></span>
-                            Dung An
+                            <!-- <span class="glyphicon glyphicon-user"></span>
+                            Dung An -->
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">Đăng xuất</a>
+                        <!-- <a href="#">Đăng xuất</a> -->
                     </li>
 
                 </ul>
@@ -147,7 +147,6 @@
                     <div class="panel-body">
                         <!-- item -->
                         <div class="row-item row" id="list-course">
-                           
                         </div>
                     </div>
                 </div>
@@ -172,7 +171,6 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../../assetTemplate/js/bootstrap.min.js"></script>
     <script src="../../assetTemplate/js/my.js"></script>
-
     <script src="../../js/home.js"></script>
 </body>
 

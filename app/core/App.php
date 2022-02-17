@@ -26,7 +26,7 @@ Router::get('/admin/category/{id}', 'HomeController@updateCategory');
 // template
 Router::get('/detail/{id}', 'HomeController@detail');
 
-
+Router::get('/post/category/{id}', 'HomeController@postbyid');
 
 // Post
 
