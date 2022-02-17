@@ -21,7 +21,8 @@ Router::get('/admin/post', 'HomeController@create');
 Router::get('/admin/post/{id}', 'HomeController@update');
 Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
 Router::get('/admin/categorydashboard', 'HomeController@CatDashborad');
-
+Router::get('/admin/category', 'HomeController@createCategory');
+Router::get('/admin/category/{id}', 'HomeController@updateCategory');
 // template
 Router::get('/detail/{id}', 'HomeController@detail');
 

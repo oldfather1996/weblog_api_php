@@ -106,11 +106,13 @@ function handleCreateForm() {
         var body = document.querySelector('input[name="body"]').value;
         var author = document.querySelector('input[name="author"]').value;
         var category_id = document.querySelector('input[name="category_id"]').value;
+        var image = document.querySelector('input[name="image"]').value;
         var formData = {
             title: title,
             body: body,
             author: author,
             category_id: category_id,
+            image: image,
         }
         createCourse(formData, function() {
             getCourses(renderCourses);

@@ -81,9 +81,9 @@
         var htmls = courses.map(function(course) {
             return `
                 <tr>
-            <td>${course.id}</td>
             <td><span class="title">${course.title}</span></td>
             <td><span class="list__course--body">${course.body}</span> </td>   
+            <td><img class="list__course--image" src="${course.image}"></img> </td>   
             <td><span class="author">${course.author}</span></td>
             <td><span class="category_id">${course.category_id}</span></td>
             <td><span class="category_name">${course.category_name}</span></td>    

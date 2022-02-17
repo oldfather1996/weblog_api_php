@@ -45,5 +45,10 @@ h1 {
 .list__course--body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+img.list__course--image {
+    width: 100%;
 }

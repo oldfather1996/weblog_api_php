@@ -28,6 +28,14 @@ class HomeController extends BaseController
     {
         return $this->view('post.create');
     }
+    public function createCategory()
+    {
+        return $this->view('category.create');
+    }
+    public function updateCategory()
+    {
+        return $this->view('category.update');
+    }
     public function CatDashborad()
     {
         return $this->view('dashbroad.CategoryDashborad');

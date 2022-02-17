@@ -30,6 +30,10 @@
             <input type="number" class="form-control" name="category_id">
         </div>
         <div>
+            <label>image</label>
+            <input type="text" class="form-control" name="image">
+        </div>
+        <div>
             <button id="btnUpdate" class="btn btn-primary">update</button>
         </div>
     </div>

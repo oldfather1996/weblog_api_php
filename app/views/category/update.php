@@ -2,9 +2,6 @@
 
 namespace app\views\category;
 ?>
-<script src="../../output/js/update.js"></script>
-<?php require_once dirname(__FILE__) . '../../theme/header.php' ?>
-<?php require_once dirname(__FILE__) . '../../theme/header_script.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,11 +23,61 @@ namespace app\views\category;
             <input type="text" class="form-control" name="name">
         </div>
         <div>
-            <button id="btnUpdate" class="btn btn-primary">update</button>
+            <button id="categoryUpdate" class="btn btn-primary">update</button>
         </div>
     </div>
-    <?php require_once dirname(__FILE__) . '../../theme/footer_script.php' ?>
 
 </body>
+<script>
+    var coursesUpdateAPI = 'http://localhost:8000/api/admin/category';
+    var coursesGetAllAPI = 'http://localhost:8000/api/post';
+
+    function start() {
+        getCourses(function(courses) {});
+        handleUpdateCourse();
+    }
+    start();
+
+    function getCourses(callback) {
+        fetch(coursesGetAllAPI)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(callback);
+    }
+
+    function updateCourse(id, data) {
+        var options = {
+            method: 'PUT',
+            body: JSON.stringify(data)
+        }
+        fetch(coursesUpdateAPI + '/' + id, options)
+            .then(function(response) {
+                response.json
+            })
+            .then(function() {});;
+
+        function renderCourses(courses) {}
+    }
+
+    function handleUpdateCourse() {
+        var updateBtn = document.querySelector('#categoryUpdate');
+        updateBtn.onclick = function() {
+            var url = window.location.href;
+            const getId = url.split('/');
+            var id = getId[5];
+            console.log(id)
+            var name = document.querySelector('input[name="name"]').value;
+            // var category_name = document.querySelector('input[name="category_name"]').value;
+            var formData = {
+                name: name,
+            }
+            updateCourse(id, formData, function() {
+                getCourses(renderCourses);
+            })
+            window.location = ('http://localhost:8000/admin/categorydashboard');
+        }
+    }
+</script>
 
 </html>

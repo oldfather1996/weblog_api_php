@@ -37,6 +37,10 @@ namespace app\views\post;
                 <input type="number" class="form-control" name="category_id">
             </div>
             <div>
+                <label>image</label>
+                <input type="text" class="form-control" name="image">
+            </div>
+            <div>
                 <button id="create" class="btn btn-primary">Create</button>
             </div>
         </div>

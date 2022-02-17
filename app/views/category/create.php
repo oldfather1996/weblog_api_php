@@ -1,6 +1,6 @@
 <?php
 
-namespace app\views\post;
+namespace app\views\category;
 ?>
 
 <?php require_once dirname(__FILE__) . '../../theme/header_script.php' ?>
@@ -16,31 +16,61 @@ namespace app\views\post;
 </head>
 
 <body>
+
     <body>
         <div class="container-fluid">
-            <h1><em class="fa fa-pen-square"></em>Create</h1>
+            <h1><em class="fa fa-pen-square"></em>Create Category</h1>
             <div>
-                <label>title</label>
-                <input type="text" class="form-control" name="title">
-            </div>
-            <div>
-                <label>body</label>
-                <input type="text" class="form-control" name="body">
-            </div>
-            <div>
-                <label>author</label>
-                <input type="text" class="form-control" name="author">
-            </div>
-            <div>
-                <label>category_id</label>
-                <input type="number" class="form-control" name="category_id">
+                <label>name</label>
+                <input type="text" class="form-control" name="name">
             </div>
             <div>
                 <button id="create" class="btn btn-primary">Create</button>
             </div>
         </div>
     </body>
-    <script src="../../js/create.js"></script>
 </body>
+<script>
+    var coursesCreateAPI = 'http://localhost:8000/api/admin/category';
+
+    function start() {
+        // getCourses(function(courses) {
+        //     renderCourses(courses)
+        // });
+        handleCreateForm();
+    }
+    start();
+
+    function createCourse(data, callback) {
+        var options = {
+            method: 'POST',
+            body: JSON.stringify(data)
+        }
+        fetch(coursesCreateAPI, options)
+            .then(function(response) {
+                response.json
+            })
+            .then(callback);;
+    }
+
+    function renderCourses(courses) {
+
+    }
+
+
+    function handleCreateForm() {
+        var createBtn = document.querySelector('#create');
+        createBtn.onclick = function() {
+            var name = document.querySelector('input[name="name"]').value;
+            var formData = {
+                name: name,
+            }
+            createCourse(formData, function() {
+                getCourses(renderCourses);
+            })
+            window.location = ('http://localhost:8000/admin/categorydashboard');
+        }
+    }
+</script>
 
 </html>

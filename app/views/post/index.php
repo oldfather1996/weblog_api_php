@@ -26,9 +26,9 @@
         <table class="table datatable">
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>title</th>
                     <th>body</th>
+                    <th>image</th>
                     <th>author</th>
                     <th>catgory_id</th>
                     <th>catgory_name</th>
