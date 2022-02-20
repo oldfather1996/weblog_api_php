@@ -32,19 +32,22 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
+
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <div class="navbar-header header__top-home">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Tin Tức</a>
+                </button> -->
+                <a class="navbar-brand" href="/">Home</a>
             </div>
+            <ul id="category_items-header" class="header__top-items>
+            </ul>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav"> 
                     <!-- <li>
                         <a href="gioithieu.html">Giới thiệu</a>
                     </li> -->
@@ -92,7 +95,7 @@
     <div class="container">
 
         <!-- slider -->
-        <div class="row carousel-holder">
+        <!-- <div class="row carousel-holder">
             <div class="col-md-12">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -119,7 +122,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- end slide -->
 
         <div class="space20"></div>
@@ -132,9 +135,9 @@
                         Menu
                     </li>
 
-                    <li href="#" class="list-group-item menu1"  id="category_items">
+                    <li href="#" class="list-group-item menu1" id="category_items">
                     </li>
-                    
+
                 </ul>
             </div>
 
@@ -149,8 +152,12 @@
                         <div class="row-item row" id="list-course">
                         </div>
                     </div>
+                    <ul id="pagination" class="pagination-css">
+                    </ul>
                 </div>
+
             </div>
+
         </div>
         <!-- /.row -->
     </div>

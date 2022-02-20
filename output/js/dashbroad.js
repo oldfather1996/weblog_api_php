@@ -79,10 +79,15 @@
         var listCourseBlock =
             document.querySelector('#list-course');
         var htmls = courses.map(function(course) {
+            let getContent = document.createElement('div')
+            getContent.innerHTML = course.body
+            getContent.innerHTML = getContent.innerText
+            getContent.innerHTML = getContent.innerText
+            let content = getContent.innerText
             return `
                 <tr>
             <td><span class="title">${course.title}</span></td>
-            <td><span class="list__course--body">${course.body}</span> </td>   
+            <td><span class="list__course--body">${content}</span> </td>   
             <td><img class="list__course--image" src="${course.image}"></img> </td>   
             <td><span class="author">${course.author}</span></td>
             <td><span class="category_id">${course.category_id}</span></td>

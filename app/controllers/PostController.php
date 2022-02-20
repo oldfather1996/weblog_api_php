@@ -12,21 +12,23 @@ use PDO;
 
 class PostController extends BaseController
 {
+    public $post;
     function __construct()
     {
         // echo " something in homcontroller";
+        $database = new Database();
+        $db = $database->connect();
+
+        $this->post = new Post($db);
     }
     public function index()
     {
         header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
+        // $limit = 5;
+        // $from = ($page*$limit)-$limit;
 
-        $database = new Database();
-        $db = $database->connect();
-
-        $post = new Post($db);
-
-        $result = $post->read();
+        $result = $this->post->read();
         $num = $result->rowCount();
 
         if ($num > 0) {
@@ -55,6 +57,46 @@ class PostController extends BaseController
             );
         }
     }
+
+    public function page($page)
+    {
+        header('Access-Control-Allow-Origin: *');
+        header('Content-Type: application/json');
+        $limit = 5;
+        $from = ($page * $limit) - $limit;
+
+        $result = $this->post->page($limit, $from);
+        $num = $result->rowCount();
+        $count = $this->post->total();
+        $total = ceil($count / $limit);
+        if ($num > 0) {
+            $posts_arr = array();
+
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                extract($row);
+
+                $post_item = array(
+                    'id' => $id,
+                    'title' => $title,
+                    'body' => html_entity_decode($body),
+                    'author' => $author,
+                    'category_id' => $category_id,
+                    'category_name' => $category_name,
+                    'image' => $image
+                );
+
+                array_push($posts_arr, $post_item);
+            }
+
+            echo json_encode([$posts_arr,$total]);
+        } else {
+            echo json_encode(
+                array('message' => 'No Posts Found')
+            );
+        }
+    }
+
+
     public function create()
     {
         header('Access-Control-Allow-Origin: *');
@@ -70,7 +112,7 @@ class PostController extends BaseController
         $data = json_decode(file_get_contents("php://input"));
 
         $post->title = $data->title;
-        $post->body = $data->body;
+        $post->body = htmlspecialchars($data->body);
         $post->author = $data->author;
         $post->category_id = $data->category_id;
         $post->image = $data->image;
@@ -218,7 +260,7 @@ class PostController extends BaseController
         // $post->id = isset($_GET['id']) ? $_GET['id'] : die();
 
         $post->title = $data->title;
-        $post->body = $data->body;
+        $post->body = htmlspecialchars($data->body);
         $post->author = $data->author;
         $post->category_id = $data->category_id;
         $post->image = $data->image;

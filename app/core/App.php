@@ -31,6 +31,7 @@ Router::get('/post/category/{id}', 'HomeController@postbyid');
 // Post
 
 Router::get('/api/post', 'PostController@index');
+Router::get('/api/post/{page}', 'PostController@page');
 
 // api call details
 Router::get('/post/{id}', 'PostController@readSingle');

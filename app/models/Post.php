@@ -39,6 +39,35 @@ class Post
     return $stmt;
   }
 
+  public function page($limit, $from)
+  {
+    $query = 'SELECT c.name as category_name, p.id, p.category_id, p.title, p.body, p.author, p.created_at,p.image
+                                FROM ' . $this->table . ' p
+                                LEFT JOIN
+                                  categories c ON p.category_id = c.id
+                                ORDER BY
+                                  p.created_at LIMIT ' . $from . ' , ' . $limit;
+
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->execute(); 
+
+
+    return $stmt;
+  }
+  
+  public function total()
+  {
+    $query = "SELECT count(*) FROM  $this->table";
+
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->execute();
+
+    $result = $stmt->fetchColumn();
+    return $result;
+  }
+
 
   function get_post_by_category()
   {
@@ -54,7 +83,7 @@ class Post
     $stmt->bindParam(1, $this->category_id);
 
     $stmt->execute();
-    
+
     return $stmt;
 
     // $row = $stmt->fetch(PDO::FETCH_ASSOC);

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../font/css/all.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../assetTemplate/css/my.css">
     <?php require_once dirname(__FILE__) . './../theme/header.php' ?>
 </head>
 

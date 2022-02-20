@@ -18,8 +18,8 @@
             <input type="text" class="form-control" name="title">
         </div>
         <div>
-            <label for="name">body</label>
-            <input type="text" class="form-control" name="body">
+            <label>body</label>
+            <input type="text" class="form-control" name="body" id="content">
         </div>
         <div>
             <label for="name">author</label>
@@ -30,15 +30,15 @@
             <input type="number" class="form-control" name="category_id">
         </div>
         <div>
-            <label>image</label>
-            <input type="text" class="form-control" name="image">
-        </div>
-        <div>
             <button id="btnUpdate" class="btn btn-primary">update</button>
         </div>
     </div>
 
 </body>
 <script src="../../js/update.js"></script>
+<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content');
+</script>
 
 </html>

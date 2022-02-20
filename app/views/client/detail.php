@@ -40,10 +40,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"> Tin Tức</a>
+                <a class="navbar-brand" href="/"> Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul id="category_items-header" class="header__top-items>
+            <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <!-- <a href="#">Giới thiệu</a> -->
@@ -79,11 +80,11 @@
                     </li>
 
                 </ul>
-            </div>
+        </div>
 
 
 
-            <!-- /.navbar-collapse -->
+        <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
@@ -98,10 +99,10 @@
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                
+
                 <h1 id="data-author"></h1>
 
-                
+
 
                 <!-- Author -->
                 <p class="lead">
@@ -129,119 +130,7 @@
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-3">
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><b>Tin liên quan</b></div>
-                    <div class="panel-body">
-
-                        <div class="row" id="tintuc-lienquan" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading"><b>Tin nổi bật</b></div>
-                    <div class="panel-body">
-
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-5">
-                                <a href="detail.html">
-                                    <img class="img-responsive" src="../../assetTemplate/image/320x150.png" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7">
-                                <a href="#"><b>Project Five</b></a>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="break"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        
 
         </div>
         <!-- /.row -->
@@ -269,7 +158,8 @@
     <script src="../../assetTemplate/js/my.js"></script>
     <script src="../../js/detail.js"></script>
 </body>
+<script>
+    
+</script>
 
 </html>
-<?php
-?>

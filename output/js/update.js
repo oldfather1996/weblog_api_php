@@ -127,7 +127,7 @@ function handleUpdateCourse() {
         const getId = url.split('/');
         var id = getId[5];
         var title = document.querySelector('input[name="title"]').value;
-        var body = document.querySelector('input[name="body"]').value;
+        var body = CKEDITOR.instances['content'].getData();
         var author = document.querySelector('input[name="author"]').value;
         var category_id = document.querySelector('input[name="category_id"]').value;
         // var category_name = document.querySelector('input[name="category_name"]').value;

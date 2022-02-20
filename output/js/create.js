@@ -3,14 +3,43 @@ var coursesCreateAPI = 'http://localhost:8000/api/admin/post';
 var coursesUpdateAPI = 'http://localhost:8000/admin/post/';
 var coursesDeleteAPI = 'http://localhost:8000/admin/post/';
 var coursesGetIDAPI = 'http://localhost:8000/api/post/';
+var getCategory = 'http://localhost:8000/api/category';
 
 function start() {
     // getCourses(function(courses) {
     //     renderCourses(courses)
     // });
+
+    getCoursesCat(function(catCourses) {
+        renderCatCourses(catCourses)
+    });
     handleCreateForm();
+
 }
-start();
+$(document).ready(function() {
+    start();
+
+})
+
+function getCoursesCat(callback) {
+    fetch(getCategory)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(callback);
+}
+
+
+function renderCatCourses(catCourses) {
+    var listCourseBlock =
+        document.querySelector('#select-option');
+    var htmls = catCourses.data.map(function(catCourses) {
+        return `
+    <option value="${catCourses.id}" >${catCourses.name}</option>
+`
+    })
+    listCourseBlock.innerHTML = htmls.join('');
+}
 
 // get all data
 function getCourses(callback) {
@@ -100,23 +129,25 @@ function renderCourses(courses) {
 // handle form data
 
 function handleCreateForm() {
+
     var createBtn = document.querySelector('#create');
     createBtn.onclick = function() {
         var title = document.querySelector('input[name="title"]').value;
-        var body = document.querySelector('input[name="body"]').value;
+        var body = CKEDITOR.instances['content'].getData();
         var author = document.querySelector('input[name="author"]').value;
-        var category_id = document.querySelector('input[name="category_id"]').value;
-        var image = document.querySelector('input[name="image"]').value;
+        var category_id = $('#select-option').val() ? $('#select-option').val() : 1;
+        var image = document.querySelector('input[name="photo"]').value;
         var formData = {
             title: title,
             body: body,
             author: author,
             category_id: category_id,
-            image: image,
+            image: image
         }
         createCourse(formData, function() {
             getCourses(renderCourses);
         })
-        window.location = ('http://localhost:8000/admin/postdashboard');
+        console.log(formData)
+            // window.location = ('http://localhost:8000/admin/postdashboard');
     }
 }

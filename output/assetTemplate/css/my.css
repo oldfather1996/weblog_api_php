@@ -1,3 +1,5 @@
+body {}
+
 .menu1 ul {
     position: absolute;
     z-index: 999;
@@ -67,7 +69,46 @@ a:hover {
     text-transform: uppercase;
 }
 
+
+/* header */
+
+#category_items-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* menu category */
+
+.list-group-item {}
+
 .demo-here {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.pagination-css {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
+    font-size: 24px;
+}
+
+.pagination-item {
+    width: 30px;
+    margin: 0 5px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.active {
+    background-color: gray;
+}
+
+.title {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
