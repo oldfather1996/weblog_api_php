@@ -148,6 +148,6 @@ function handleCreateForm() {
             getCourses(renderCourses);
         })
         console.log(formData)
-            // window.location = ('http://localhost:8000/admin/postdashboard');
+        window.location = ('http://localhost:8000/admin/postdashboard');
     }
 }
