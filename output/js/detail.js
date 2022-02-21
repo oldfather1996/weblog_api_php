@@ -25,7 +25,6 @@ $.ajax({
 
         $('#data-body').html(reponse['body'])
         $('#data-body').html($('#data-body').text())
-        $('#data-body').html($('#data-body').text())
         escapeHtml($('#data-body').html($('#data-body').text()))
         $('#data-category_name').text(reponse['category_name'])
 
