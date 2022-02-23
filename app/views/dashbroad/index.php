@@ -1,5 +1,4 @@
-<?php
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -123,8 +122,6 @@
         var listCourseBlock =
             document.querySelector('#category_items');
         var htmls = catCourses.data.length
-        console.log(htmls);
-        // console.log(catCourses);
         listCourseBlock.innerText = htmls;
     }
 </script>

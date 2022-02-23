@@ -3,5 +3,8 @@
         "psr-4": {
             "project\\": ""
         }
+    },
+    "require": {
+        "firebase/php-jwt": "^6.0"
     }
 }

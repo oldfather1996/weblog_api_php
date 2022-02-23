@@ -1,106 +1,46 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<?php
 
-        <div class="overlay-loader">
-            <div class="loader">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-        <div class="modal-content ">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Login/Registration</h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="Login">
-                                <p class="errorLog" style="color: #990000; text-align: center;"></p>
-                                <form role="form" class="form-horizontal" method="post" id="form_login">
-                                    <div class="form-group">
-                                        <label for="username" class="col-sm-2 control-label">
-                                            Username</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="usernameLog" placeholder="Email" name="username" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                            Password</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="passwordLog" name="password" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary btn-sm">
-                                                Login
-                                            </button>
-                                            <a href="/reset">Quên mật khẩu</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="Registration">
-                                <p class="error" style="color: #990000; text-align: center;"></p>
-                                <form role="form" class="form-horizontal">
+session_start();
+$message = "";
+if (count($_POST) > 0) {
+    $con = mysqli_connect('127.0.0.1:3306', 'root', '', 'assignment') or die('Unable To connect');
+    $result = mysqli_query($con, "SELECT * FROM users WHERE user_name='" . $_POST["user_name"] . "' and password = '" . $_POST["password"] . "'");
+    $row  = mysqli_fetch_array($result);
+    if (is_array($row)) {
+        $_SESSION["id"] = $row['id'];
+        $_SESSION["user_name"] = $row['user_name'];
+        echo "success";
+    } else {
+        $message = "Invalid Username or Password!";
+    }
+}
+if (isset($_SESSION["id"])) {
+    header("Location: localhost:8000/admin");
+}else{
+    echo "fails";
+}
+?>
+<html>
 
-                                    <div class="form-group">
-                                        <label for="username" class="col-sm-2 control-label">
-                                            Username</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="namerg" placeholder="Username" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email" class="col-sm-2 control-label">
-                                            Email</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="emailrg" placeholder="Email" name="emailrg" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password" class="col-sm-2 control-label">
-                                            Password</label>
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="passwordrg" placeholder="Password" name="passwordrg" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                        </div>
-                                        <div class="col-sm-10">
-                                            <button type="button" class="btn btn-primary btn-sm" onclick="register()">
-                                                Register
-                                            </button>
-                                            <button type="button" class="btn btn-default btn-sm">
-                                                Cancel
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<head>
+    <title>User Login</title>
+</head>
+
+<body>
+    <form name="frmUser" method="post" action="" align="center">
+        <div class="message"><?php if ($message != "") {
+                                    echo $message;
+                                } ?></div>
+        <h3 align="center">Enter Login Details</h3>
+        Username:<br>
+        <input type="text" name="user_name">
+        <br>
+        Password:<br>
+        <input type="password" name="password">
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset">
+    </form>
+</body>
+
+</html>

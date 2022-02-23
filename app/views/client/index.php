@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,8 +48,8 @@
             <ul id="category_items-header" class="header__top-items>
             </ul>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav"> 
+            <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
                     <!-- <li>
                         <a href="gioithieu.html">Giới thiệu</a>
                     </li> -->
@@ -82,11 +84,11 @@
                     </li>
 
                 </ul>
-            </div>
+        </div>
 
 
 
-            <!-- /.navbar-collapse -->
+        <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>

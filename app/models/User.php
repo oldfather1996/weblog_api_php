@@ -21,9 +21,6 @@ class User
 
   public function signup()
   {
-    // if($this->isAlreadyExit()){
-    //   return false;
-    // }
     $query = 'INSERT INTO ' . $this->table . ' SET username = :username, password = :password, email = :email';
 
     $stmt = $this->conn->prepare($query);
@@ -46,7 +43,7 @@ class User
   }
   public function doLogin($username = null, $password = null)
   {
-    $query = 'SELECT * FROM users where username=? and acitive=1';
+    $query = 'SELECT * FROM users where username=? and password=?';
     $stmt = $this->conn->prepare($query);
     $stmt->bind_param('s', $username);
     print_r($stmt);

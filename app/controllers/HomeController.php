@@ -12,6 +12,15 @@ class HomeController extends BaseController
     function __construct()
     {
     }
+
+    // Authen
+
+    public function login(){
+        return $this->view('auth.login');
+    }
+
+    // client
+
     public function index()
     {
         return $this->view('client.index');
@@ -24,6 +33,8 @@ class HomeController extends BaseController
     {
         return $this->view('client.categorydetail');
     }
+
+    //  admin
     public function Dashbroad()
     {
         return $this->view('dashbroad.index');

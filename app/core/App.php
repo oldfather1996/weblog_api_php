@@ -11,22 +11,23 @@ require_once(dirname(__FILE__) . '../../controllers/AdminController.php');
 
 
 
-
-
 // Layout
 
 Router::get('/', 'HomeController@index');
 Router::get('/admin', 'HomeController@Dashbroad');
+Router::get('/login', 'HomeController@login');
 Router::get('/admin/post', 'HomeController@create');
 Router::get('/admin/post/{id}', 'HomeController@update');
 Router::get('/admin/postdashboard', 'HomeController@PostDashborad');
 Router::get('/admin/categorydashboard', 'HomeController@CatDashborad');
 Router::get('/admin/category', 'HomeController@createCategory');
 Router::get('/admin/category/{id}', 'HomeController@updateCategory');
-// template
 Router::get('/detail/{id}', 'HomeController@detail');
-
 Router::get('/post/category/{id}', 'HomeController@postbyid');
+
+
+Router::post('/api/register','AdminController@signup');
+Router::post('/api/login','AdminController@login');
 
 // Post
 
